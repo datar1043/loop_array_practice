@@ -167,18 +167,22 @@ public class ArrayPractice {
     }
 
 
-    //Practice11//서정림
+    //Practice11
     public void practice11() {
         Scanner sc = new Scanner(System.in);
+        System.out.println("주민등록번호(-포함): ");
+        String bornNum = sc.next();
+        char copy[] = new char[bornNum.length()];
 
-        System.out.print("주민등록번호(-포함):");
-        String str = sc.nextLine();
-        char[] ch = str.toCharArray();
-
-        for (int i = 8; i < ch.length; i++) {
-            ch[i] = '*';
+        for (int i = 0; i < bornNum.length(); i++) {
+            copy[i] = bornNum.charAt(i);
+        }
+        for (int i = 8; i < copy.length; i++) { //인덱스는 0부터 시작이므로 7번째부터 *로 변경
+            copy[i] = '*';
+        }
+        for (int i = 0; i < copy.length; i++) {
+            System.out.print(copy[i]);
         }
 
-        System.out.println(new String(ch));
     }
 }
